@@ -1,0 +1,45 @@
+page.headerData {
+  8900 = IMG_RESOURCE
+  8900 {
+    file = {$favicon.path}
+    stdWrap.dataWrap = <link rel="icon" href="|" type="image/svg+xml">
+    required = 1
+  }
+  8901 = IMG_RESOURCE
+  8901 {
+    file = {$favicon.path}
+    file.maxW = 64
+    file.maxH = 64
+    file.ext = ico
+    file.params = -background none -density 64x64
+    stdWrap.dataWrap = <link rel="icon" type="image/x-icon" href="|" sizes="16x16 32x32 64x64">
+    required = 1
+  }
+  8902 = IMG_RESOURCE
+  8902 {
+    file = {$favicon.path}
+    file.maxW = 32
+    file.ext = png
+    file.params = -background none
+    stdWrap.dataWrap = <link rel="icon" href="|" type="image/png" sizes="32x32">
+    required = 1
+  }
+  8903 = IMG_RESOURCE
+  8903 {
+    file = {$favicon.path}
+    file.maxW = 512
+    file.ext = png
+    file.params = -background none
+    stdWrap.dataWrap = <link rel="icon" href="|" type="image/png" sizes="512x512">
+    required = 1
+  }
+  8904 = IMG_RESOURCE
+  8904 {
+    file = {$favicon.path}
+    file.maxW = 180
+    file.ext = png
+    file.params = -background none
+    stdWrap.dataWrap = <link rel="apple-touch-icon" href="|" type="image/png" sizes="180x180">
+    required = 1
+  }
+}

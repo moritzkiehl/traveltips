@@ -1,0 +1,12 @@
+{
+	"extends": [
+		"stylelint-config-recommended-scss"
+	],
+	"rules": {
+		"no-descending-specificity": null,
+		"no-empty-source": [true, {"severity": "warning"}],
+		"scss/comment-no-empty": null,
+		"scss/at-import-partial-extension": null,
+		"no-invalid-position-at-import-rule": [true, {"severity": "warning"}]
+	}
+}

@@ -1,0 +1,55 @@
+variables:
+  # PHP_VERSION: "8.2"
+  FRONTEND_WORK_DIR: "."
+
+stages:
+  - lint
+  - build
+  - test
+
+include:
+  - project: 'werkraum/vorlagen/ci-pipelines'
+    ref: main
+    file: '/lint.yml'
+  - project: 'werkraum/vorlagen/ci-pipelines'
+    ref: main
+    file: '/composer.yml'
+  - project: 'werkraum/vorlagen/ci-pipelines'
+    ref: main
+    file: '/frontend.yml'
+  - project: 'werkraum/vorlagen/ci-pipelines'
+    ref: main
+    file: '/test.yml'
+
+pages:
+  needs: []
+  image: drud/ddev-webserver:v1.21.5
+  before_script:
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$GITLAB_RUNNER_DEPLOY_KEY")
+    - mkdir -p ~/.ssh/
+    - ssh-keyscan gitlab.werkraum.net >> ~/.ssh/known_hosts
+    - update-alternatives --set php /usr/bin/php${PHP_VERSION}
+    # temporary set to 2.5.5 since 2.5.7 has a bug
+    - composer self-update 2.5.5
+  script:
+    - npm install
+    - npm run build
+    - composer config extra.typo3/cms.root-dir public
+    - composer config --unset repositories.0
+    - |
+      composer config --json repositories.nolink '{"url":"extensions/*", "type": "path","options": {"symlink": false}}'
+    - composer install
+    # use sqlite3 as DB
+    - cp .env-pages .env
+    - touch typo3.db
+    # setup DB since its empty
+    - php vendor/bin/typo3 database:updateschema
+    - php vendor/bin/typo3 styleguide:export
+  artifacts:
+    paths:
+      - public
+  cache:
+    paths:
+      - vendor/
+      - node_modules/

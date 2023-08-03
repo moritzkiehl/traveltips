@@ -1,0 +1,17 @@
+version: '3.6'
+#ddev-generated
+services:
+  web:
+    environment:
+      - TYPO3_CONTEXT=Development/Ddev
+      - ENVNAME=Development/Ddev
+      - DBNAME=db
+      - DBPASS=db
+      - DBUSER=db
+      - DBHOST=db
+      - DBPORT=3306
+      - DBDRIVER=mysqli
+      - TZ=Europe/Berlin
+  db:
+    environment:
+      - TZ=Europe/Berlin

@@ -1,0 +1,20 @@
+@use "sass:map";
+@use "sass:color";
+
+$enable-rounded: false;
+$enable-important-utilities: true;
+// responsive font sizes: should be off since we have our own
+$enable-rfs: false;
+
+$primary: #e96211;
+$secondary: #000000;
+
+$font-family-sans-serif: Roboto, system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+$font-size-base: 1rem;
+
+$h1-font-size: 70px;
+$h2-font-size: 60px;
+$h3-font-size: 48px;
+$h4-font-size: 35px;
+$h5-font-size: 25px;

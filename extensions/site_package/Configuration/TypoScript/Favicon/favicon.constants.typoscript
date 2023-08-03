@@ -1,0 +1,3 @@
+# customsubcategory=favicon=Favicon
+# cat=Favicon/favicon; type=string; label= SVG Icon File Location or Inline Data
+favicon.path = EXT:site_package/Resources/Public/Media/favicon.svg

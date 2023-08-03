@@ -1,0 +1,28 @@
+@import "EXT:fluid_styled_content/Configuration/TypoScript/constants.typoscript"
+
+@import "./_Lib/*.constants.typoscript"
+@import "./Favicon/*.constants.typoscript"
+@import "./Content/*.constants.typoscript"
+@import "./Page/*.constants.typoscript"
+
+page {
+  fluidtemplate {
+    layoutRootPath = EXT:site_package/Resources/Private/Layouts/Page/
+    partialRootPath = EXT:site_package/Resources/Private/Partials/Page/
+    templateRootPath = EXT:site_package/Resources/Private/Templates/Page/
+  }
+}
+
+styles.content.image.lazyLoading = lazy
+styles.content.textmedia.linkWrap.width = 1920m
+styles.content.textmedia.linkWrap.height =
+styles.content.textmedia.linkWrap.newWindow = 0
+
+### lightbox setup
+styles.content.textmedia.linkWrap.lightboxEnabled = 1
+styles.content.textmedia.linkWrap.lightboxCssClass = glightbox
+
+# your custom variables
+site {
+  root = 1
+}

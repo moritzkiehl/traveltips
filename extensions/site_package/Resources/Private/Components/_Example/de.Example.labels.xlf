@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0" xmlns:t3="http://typo3.org/schemas/xliff">
+	<file source-language="en" target-landuage="de" datatype="plaintext" original="messages" date="2021-02-02T18:55:32Z" >
+		<header/>
+		<body>
+			<trans-unit id="example">
+				<source>example english</source>
+				<target>Beispiel deutsch</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

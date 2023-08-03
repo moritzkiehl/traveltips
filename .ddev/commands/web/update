@@ -1,0 +1,11 @@
+#!/bin/bash
+
+## Description: custom: update composer and reset typo3 cache
+
+composer install
+
+typo3 database:updateschema
+typo3 install:fixfolderstructure
+typo3 extension:setup
+typo3 cache:flush
+typo3 cache:warmup

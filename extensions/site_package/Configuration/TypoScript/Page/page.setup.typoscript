@@ -1,0 +1,66 @@
+page = PAGE
+page {
+  typeNum = 0
+
+  # ensure this gets executed first
+  5 = USER
+  5.userFunc = Werkraum\ViteForTypo3\Vitejs\FluidComponentAssetLoader->inlineAsset
+  5 {
+    componentNamespace = Werkraum\SitePackage\Components
+    component = JavaScript/Main
+  }
+
+  10 = FLUIDTEMPLATE
+  10 {
+    templateRootPaths {
+      0 = EXT:site_package/Resources/Private/Templates/Page/
+      1 = {$page.fluidtemplate.templateRootPath}
+    }
+    partialRootPaths {
+      0 = EXT:site_package/Resources/Private/Partials/Page/
+      1 = {$page.fluidtemplate.partialRootPath}
+    }
+    layoutRootPaths {
+      0 = EXT:site_package/Resources/Private/Layouts/Page/
+      1 = {$page.fluidtemplate.layoutRootPath}
+    }
+
+    templateName = TEXT
+    templateName.stdWrap.cObject = CASE
+    templateName.stdWrap.cObject {
+      key.data = pagelayout
+      default = TEXT
+      default.value = Content
+      pagets__home = TEXT
+      pagets__home.value = Home
+      pagets__content = TEXT
+      pagets__content.value = Content
+    }
+
+    dataProcessing {
+      # this will provide any typoscript config as an array
+      1 = Werkraum\SitePackage\Frontend\DataProcessing\ConstantsProcessor
+      1 {
+        key = site
+        as = site
+      }
+      10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      10 {
+        levels = 1
+        includeSpacer = 1
+        as = mainnavigation
+      }
+    }
+
+    config.headerComment (
+      created by werkraum Digitalmanufaktur GmbH - https://werkraum.net - info@werkraum.net - Ihre TYPO3 Agentur in Karlsruhe
+    )
+  }
+
+  meta {
+    viewport = width=device-width, initial-scale=1, shrink-to-fit=no
+
+    theme-color=#fff
+  }
+
+}

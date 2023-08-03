@@ -1,0 +1,11 @@
+@import "EXT:fluid_styled_content/Configuration/TypoScript/setup.typoscript"
+#@import "EXT:rte_ckeditor_image/Configuration/TypoScript/ImageRendering/setup.txt"
+
+
+# only a single wildcard is allowed
+# wildcard on directory will not work anymore
+@import "./_Lib/*.setup.typoscript"
+@import "./Favicon/*.setup.typoscript"
+@import "./Content/*.setup.typoscript"
+@import "./Page/*.setup.typoscript"
+

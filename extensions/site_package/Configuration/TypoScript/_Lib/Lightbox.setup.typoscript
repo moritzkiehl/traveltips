@@ -1,0 +1,8 @@
+lib.contentElement.settings.media.popup.JSwindow = 0
+lib.contentElement.settings.media.popup.linkParams.ATagParams.dataWrap (
+  class="{$styles.content.textmedia.linkWrap.lightboxCssClass}"
+  data-type="image" data-gallery="glightbox-gallery-{field:uid}"
+  data-description="{file:current:description}"
+  data-desc-position="bottom"
+  data-effect="fade"
+)

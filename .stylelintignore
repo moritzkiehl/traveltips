@@ -1,0 +1,5 @@
+node_modules
+
+extensions/**/Resources/Public
+
+extensions/site_package/Resources/Private/Components/_Empty

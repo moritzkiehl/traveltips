@@ -1,0 +1,25 @@
+tt_content.werkraum-default-container < lib.contentElement
+tt_content.werkraum-default-container {
+    templateRootPaths {
+        50 = EXT:site_package/Resources/Private/Templates/Content
+    }
+    dataProcessing {
+        100 = B13\Container\DataProcessing\ContainerProcessor
+    }
+}
+
+tt_content.werkraum-50-50-grid < tt_content.werkraum-default-container
+tt_content.werkraum-50-50-grid.templateName = Col2Grid-50-50
+
+tt_content.werkraum-33-66-grid < tt_content.werkraum-default-container
+tt_content.werkraum-33-66-grid.templateName = Col2Grid-33-66
+
+tt_content.werkraum-66-33-grid < tt_content.werkraum-default-container
+tt_content.werkraum-66-33-grid.templateName = Col2Grid-66-33
+
+tt_content.werkraum-33-33-33-grid < tt_content.werkraum-default-container
+tt_content.werkraum-33-33-33-grid.templateName = Col3Grid-33-33-33
+
+tt_content.werkraum-25-25-25-25-grid < tt_content.werkraum-default-container
+tt_content.werkraum-25-25-25-25-grid.templateName = Col4Grid-25-25-25-25
+

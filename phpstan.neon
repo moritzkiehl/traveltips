@@ -1,0 +1,11 @@
+parameters:
+    tmpDir: tmp
+    level: 6
+    excludePaths:
+        - *node_modules*
+    paths:
+        - %currentWorkingDirectory%/extensions/site_package
+    ignoreErrors:
+    		- '#Variable \$_EXTKEY might not be defined.#'
+        #- '#Property(.*)iterable(.*)ObjectStorage#'
+    checkMissingIterableValueType: false

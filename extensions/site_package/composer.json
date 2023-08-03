@@ -1,0 +1,23 @@
+{
+    "name": "werkraum/site-package",
+    "description": "werkraum base site-package",
+    "license": "GPL-2.0-or-later",
+    "type": "typo3-cms-extension",
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "site_package"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Werkraum\\SitePackage\\": "Classes/"
+        }
+    },
+	"suggest": {
+		"sitegeist/fluid-components": "Encapsulated frontend components with Fluid's ViewHelper syntax",
+		"sitegeist/fluid-styleguide": "Living styleguide for Fluid Components",
+		"werkraum/vite-fluid-components": "Adapter for Fluid Components and Vite",
+		"werkraum/bootstrap-fluid-components": "Fluid Components based on the famous bootstrap framework",
+		"werkraum/fluid-styleguide-export": "Export the Fluid Styleguide as a static Page"
+	}
+}

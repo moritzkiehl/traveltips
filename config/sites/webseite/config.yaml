@@ -1,0 +1,33 @@
+base: 'https://travelhub.ddev.site'
+baseVariants:
+  -
+    base: 'https://%env(STAGING_DOMAIN_NAME)%/'
+    condition: 'applicationContext == "Production/Staging"'
+  -
+    base: 'https://%env(PRODUCTION_DOMAIN_NAME)%/'
+    condition: 'applicationContext == "Production/Live"'
+errorHandling:
+  -
+    errorCode: 404
+    errorHandler: Page
+    errorContentSource: 't3://page?uid=2'
+  -
+    errorCode: 403
+    errorHandler: Page
+    errorContentSource: 't3://page?uid=3'
+languages:
+  -
+    title: Deutsch
+    enabled: true
+    base: /
+    typo3Language: de
+    locale: de_DE.UTF-8
+    iso-639-1: de
+    navigationTitle: Deutsch
+    hreflang: de-DE
+    direction: ''
+    flag: de
+    languageId: 0
+    websiteTitle: ''
+rootPageId: 1
+websiteTitle: 'travelhub'

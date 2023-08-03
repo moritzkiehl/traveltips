@@ -1,0 +1,4 @@
+.ddev/commands/web/cron -text eol=lf
+.ddev/commands/web/rector -text eol=lf
+.ddev/commands/web/setup -text eol=lf
+.ddev/commands/web/update -text eol=lf

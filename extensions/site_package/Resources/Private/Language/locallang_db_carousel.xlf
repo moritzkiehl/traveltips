@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0" xmlns:t3="http://typo3.org/schemas/xliff">
+    <file source-language="en" datatype="plaintext" original="messages" date="2023-05-06T18:55:32Z">
+        <header/>
+        <body>
+            <trans-unit id="tt_content.carousel_element">
+                <source>Carousel</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

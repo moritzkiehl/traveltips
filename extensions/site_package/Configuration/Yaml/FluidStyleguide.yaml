@@ -1,0 +1,92 @@
+FluidStyleguide:
+  Features:
+    # Enable/Disable markdown documentation rendering
+    Documentation: true
+
+    # Enable/Disable live editing of component fixture
+    Editor: true
+
+    # Enable/Disable zip download of component folder
+    ZipDownload: false
+
+    # Enable/Disable breakpoint switcher
+    ResponsiveBreakpoints: true
+
+    # Enable/Disable rulers
+    Ruler: false
+
+    # Escapes string input from the editor. This prevents Cross-Site-Scripting
+    # but leads to differing component output when using the editor.
+    EscapeInputFromEditor: true
+
+    # Show demo components in styleguide even if other components exist
+    DemoComponents: false
+
+    # Enable/Disable support for multiple languages
+    Languages: true
+
+    # Show code quality tab in component detail view
+    # uses fluid-components-linter to provide hints to potential problems
+    CodeQuality: true
+
+  # Markup that will be wrapped around the component output in the styleguide
+  # This can be overwritten per component fixture by specifying
+  # "styleguideComponentContext" in the fixture data
+  ComponentContext: '<div class="fluidStyleguideComponentSpacing">|</div>'
+
+  ComponentAssets:
+    Global:
+      Css:
+        - EXT:fluid_styleguide/Resources/Public/Css/Iframe.css
+        - EXT:site_package/Resources/Public/Css/BootstrapGridOverlay.css
+      Javascript:
+        - EXT:fluid_styleguide/Resources/Public/Javascript/Iframe.min.js
+    Packages:
+      'Sitegeist\FluidStyleguide\DemoComponents':
+        Css:
+          - EXT:fluid_styleguide/Resources/Public/Css/DemoComponents.css
+  #           'Vendor\MyExtension\Components':
+  #               Css:
+  #                   - EXT:my_extension/Resources/Public/Css/Components.css
+  #               Javascript:
+  #                   - EXT:my_extension/Resources/Public/Javascript/Components.js
+
+  ResponsiveBreakpoints:
+    Desktop: '100%'
+    XXLarge: '1400px'
+    XLarge: '1200px'
+    Large: '992px'
+    Tablet: '768px'
+    Mobile: '576px'
+
+  Branding:
+    #       Title: 'My Styleguide'
+    #       IntroFile: 'EXT:my_extension/Documentation/FluidStyleguide.md'
+    IframeBackground: '#FFF'
+    HighlightColor: '#00d8e6'
+    FontFamily: "'Open Sans', Helvetica, FreeSans, Arial, sans-serif"
+
+  Languages:
+    default:
+      identifier: default
+      twoLetterIsoCode: en
+      locale: en_US.UTF-8
+      hreflang: en
+      direction: ltr
+      label: English
+    german:
+      identifier: de
+      twoLetterIsoCode: de
+      locale: de_DE.UTF-8
+      hreflang: de
+      direction: ltr
+      label: Deutsch
+
+  Fluid:
+    TemplateRootPaths:
+      - EXT:fluid_styleguide/Resources/Private/Templates
+      - EXT:site_package/Resources/Private/FluidStyleguide/Templates
+    PartialRootPaths:
+      - EXT:fluid_styleguide/Resources/Private/Partials
+    LayoutRootPaths:
+      - EXT:fluid_styleguide/Resources/Private/Layouts

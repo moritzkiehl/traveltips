@@ -1,0 +1,49 @@
+lib.contentElement {
+  dataProcessing {
+    1 = Werkraum\SitePackage\Frontend\DataProcessing\ConstantsProcessor
+    1 {
+      // which typoscript key to look for
+      key = site
+      // name of the array in the view
+      as = site
+    }
+  }
+}
+
+#tt_content.example =< lib.contentElement
+#tt_content.example {
+#  templateName = Map
+#  dataProcessing {
+#    # custom flexform processor
+#    10 = Werkraum\SitePackage\Frontend\DataProcessing\FlexFormProcessor
+#    10 {
+#      as = config
+#    }
+#
+#    # how to reference 1:N records
+#    20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+#    20 {
+#      if.isTrue.field = <foreign_field_name>
+#      table = <foreign_table_name>
+#      as = markerlist
+#      pidInList.field = pid
+#      uidInList.field = <foreign_field_name>
+#      orderBy = <foreign_table_name>.sorting
+#    }
+#
+#    # how to add images/files from sys_file_references
+#    30 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+#    30 {
+#      references.fieldName = background_image
+#      references.table = tt_content
+#      as = backgroundImages
+#    }
+#
+#    # b13/container
+#    200 = B13\Container\DataProcessing\ContainerProcessor
+#    200 {
+#      colPos = 200
+#      as = children
+#    }
+#  }
+#}

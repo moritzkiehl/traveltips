@@ -1,0 +1,38 @@
+{namespace fsv=Sitegeist\FluidStyleguide\ViewHelpers}
+{namespace site=Werkraum\SitePackage\ViewHelper}
+<f:layout name="Iframe" />
+
+<f:section name="Component">
+    <site:condition.hasParameter parameter="iframe">
+        <f:else>
+            <div class="bootstrap-grid-overlay">
+                <div class="container">
+                    <div class="row row-cols-12">
+                        <div class="col"></div>
+                        <div class="col"></div>
+                        <div class="col"></div>
+                        <div class="col"></div>
+                        <div class="col"></div>
+                        <div class="col"></div>
+                        <div class="col"></div>
+                        <div class="col"></div>
+                        <div class="col"></div>
+                        <div class="col"></div>
+                        <div class="col"></div>
+                        <div class="col"></div>
+                    </div>
+                </div>
+            </div>
+        </f:else>
+    </site:condition.hasParameter>
+    <div class="container">
+        <fsv:component.example
+            component="{component}"
+            fixtureData="{fixtureData}"
+            fixtureName="{fixtureName}"
+            context="{styleguideConfiguration.componentContext}"
+            applyContextFromFixture="1"
+            execute="1"
+        />
+    </div>
+</f:section>

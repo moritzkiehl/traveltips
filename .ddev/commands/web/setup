@@ -1,0 +1,45 @@
+#!/bin/bash
+
+## Description: custom: setup project once
+
+function setupProject() {
+    [ -f .env ] || cp .env-dist .env
+
+    mkdir -p node_modules/.ssl/ && mkcert -key-file node_modules/.ssl/key.pem -cert-file node_modules/.ssl/cert.pem localhost 127.0.0.1 ::1
+
+    composer install -d /var/www/html
+
+    echo '* * * * * root TYPO3_CONTEXT=Development/Ddev /usr/bin/php /var/www/html/vendor/bin/typo3 scheduler:run' | sudo tee -a /etc/cron.d/typo3
+    sudo chmod 0644 /etc/cron.d/typo3
+    echo "cron installed"
+    echo "try: ddev cron"
+
+    vendor/bin/typo3 database:updateschema
+    vendor/bin/typo3 install:fixfolderstructure
+    vendor/bin/typo3 extension:setup
+    vendor/bin/typo3 cache:flush
+    vendor/bin/typo3 cache:warmup
+    vendor/bin/typo3 backend:createadmin werkraum werkraum || exit 0
+
+}
+
+IS_ALREADY_SETUP=$([ -f /var/www/html/.setup ] && echo "1" || echo "0")
+FORCE=0
+
+while :; do
+    case $1 in
+        -f|--force) FORCE=1
+        ;;
+        *) break
+    esac
+    shift
+done
+
+if [ $IS_ALREADY_SETUP == '0' ] || [ $FORCE == 1 ]
+then
+    setupProject
+    cd /var/www/html/
+    touch .setup
+else
+    echo "nothing todo."
+fi

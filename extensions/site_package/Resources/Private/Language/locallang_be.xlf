@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="extra" date="2019-02-20T00:00:00Z" product-name="site_package">
+		<header/>
+		<body>
+			<trans-unit id="backendlayout.home" xml:space="preserve">
+				<source>Home</source>
+			</trans-unit>
+			<trans-unit id="backendlayout.content" xml:space="preserve">
+				<source>Content</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

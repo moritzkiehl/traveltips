@@ -1,0 +1,16 @@
+#!/bin/bash
+
+DAEMON=webextradaemons:vitejs
+
+case $1 in
+    start|stop) # pass the command
+        COMMAND=$1
+        ;;
+    *)
+        COMMAND=status
+        ;;
+esac
+
+# restart will not work, since the process will be restarted automatically
+
+sudo supervisorctl $COMMAND $DAEMON

@@ -1,0 +1,17 @@
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:wr="http://typo3.org/ns/Werkraum/SitePackage/Components"
+      >
+<f:layout name="Default" />
+<f:section name="Main">
+  <main role="main">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '0'}" />
+        </div>
+      </div>
+    </div>
+  </main>
+</f:section>
+</html>

@@ -1,0 +1,22 @@
+{
+	"default": {
+		"exampleString": "Lorem Ipsum",
+		"exampleLink": "https://werkraum.net/",
+		"exampleTypolink":  "https://werkraum.net/ _blank myCssClass \"Title of the link\"",
+		"exampleImage":  "https://image-placeholder.timme1.werkraum-hosting.net/id/10/256",
+		"exampleFile":  "https://image-placeholder.timme1.werkraum-hosting.net/id/10/256",
+		"exampleNavigation": [
+			{
+				"title": "Lorem Ipsum",
+				"link": "https://werkraum.net/",
+				"current": 1
+			}
+		],
+		"exampleNavigationItem": {
+			"title": "Lorem Ipsum",
+			"link": "https://werkraum.net/",
+			"current": 1
+		},
+		"exampleDateTime": 1594110573
+	}
+}

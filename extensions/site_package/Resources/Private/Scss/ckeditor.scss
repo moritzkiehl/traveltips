@@ -1,0 +1,53 @@
+@import "./variables";
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/variables-dark";
+@import "~bootstrap/scss/maps";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/utilities";
+
+/*
+ * Configure the z-index of the editor UI, so when inside a Bootstrap
+ * modal, it will be rendered over the modal.
+ */
+:root {
+    --ck-z-default: 100;
+    --ck-z-modal: calc( var(--ck-z-default) + 999 );
+}
+
+/*
+ * Override the width of the table set by Bootstrap content styles.
+ * See: https://github.com/ckeditor/ckeditor5/issues/3253.
+ */
+.ck-content .table {
+    width: auto;
+}
+
+.ck.ck-content {
+
+    @import "~bootstrap/scss/root";
+    @import "~bootstrap/scss/reboot";
+    @import "~bootstrap/scss/type";
+    @import "~bootstrap/scss/tables";
+    @import "~bootstrap/scss/buttons";
+
+    --bs-border-radius: 0;
+
+    p {
+        //font-size: 1rem;
+        //
+        //&.lead {
+        //    font-size: 1.5rem;
+        //}
+        //
+        //&.small {
+        //    font-size: .75rem;
+        //}
+
+        &.extra-small {
+            font-size: .65rem;
+        }
+    }
+
+}

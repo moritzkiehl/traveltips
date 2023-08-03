@@ -1,0 +1,5 @@
+#!/bin/bash
+
+## Description: custom: start|stop|restart the registered cron
+
+sudo service cron $@

@@ -1,0 +1,96 @@
+<html xmlns:fc="http://typo3.org/ns/SMS/FluidComponents/ViewHelpers"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+      lang="en"
+>
+<fc:component description="Example">
+    <fc:param name="exampleString" type="string" optional="1"/>
+    <fc:param name="exampleLink" type="Link" optional="1"/>
+    <fc:param name="exampleTypolink" type="Typolink" optional="1"/>
+    <fc:param name="exampleImage" type="Image" optional="1"/>
+    <fc:param name="exampleFile" type="File" optional="1"/>
+    <fc:param name="exampleLabels" type="Labels" optional="1"/>
+    <fc:param name="exampleNavigation" type="Navigation" optional="1"/>
+    <fc:param name="exampleNavigationItem" type="NavigationItem" optional="1"/>
+    <fc:param name="exampleDateTime" type="SMS\FluidComponents\Domain\Model\DateTime" optional="1"/>
+
+    <fc:renderer>
+        <div class="{component.class} vstack gap-5 p-4">
+
+            <a href="https://github.com/sitegeist/fluid-components/blob/master/Documentation/DataStructures.md#fluid-components-data-structures"
+               target="_blank"
+               class="btn btn-primary"
+            >fluid-components-data-structures</a>
+
+            <div>
+                exampleLink
+                <a href="{exampleLink.uri}" target="{exampleLink.target}" title="{exampleLink.title}"
+                   class="{exampleLink.class}">
+                    {exampleLink.uri}
+                </a>
+            </div>
+
+            <div>
+                exampleTypolink
+                <a href="{exampleTypolink.uri}" target="{exampleTypolink.target}" title="{exampleTypolink.title}"
+                   class="{exampleTypolink.class}">
+                    {exampleTypolink.uri}
+                </a>
+            </div>
+
+
+            <div>
+                exampleImage
+                <img
+                    src="{exampleImage.publicUrl}"
+                    alt="{exampleImage.alternative}"
+                    title="{exampleImage.title}"
+                />
+            </div>
+
+            <div>
+                exampleFile
+                <a href="{exampleFile.publicUrl}">
+                    {exampleFile.publicUrl}
+                </a>
+            </div>
+
+            <div>
+                exampleLabel
+                {exampleLabels.example}
+            </div>
+
+            <div>
+                exampleNavigation
+                <ul>
+                    <f:for each="{exampleNavigation}" as="item">
+                        <li>
+                            <a href="{item.link}" target="{item.target}">
+                                <f:if condition="{item.active}">
+                                    <f:then><strong>{item.title}</strong></f:then>
+                                    <f:else>{item.title}</f:else>
+                                </f:if>
+                            </a>
+                        </li>
+                    </f:for>
+                </ul>
+            </div>
+
+            <div>
+                exampleNavigationItem
+                <a href="{exampleNavigationItem.link}" target="{exampleNavigationItem.target}">
+                    <f:if condition="{exampleNavigationItem.active}">
+                        <f:then><strong>{exampleNavigationItem.title}</strong></f:then>
+                        <f:else>{exampleNavigationItem.title}</f:else>
+                    </f:if>
+                </a>
+            </div>
+
+            <div>
+                exampleDateTime
+                <f:format.date format="d.m.Y H:i">{exampleDateTime}</f:format.date>
+            </div>
+        </div>
+    </fc:renderer>
+</fc:component>
+</html>

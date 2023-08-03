@@ -1,0 +1,117 @@
+{
+    "repositories": [
+        {
+            "type": "path",
+            "url": "extensions/*",
+            "options": {
+                "symlink": true
+            }
+        },
+		{
+			"type": "git",
+			"url": "git@gitlab.werkraum.net:werkraum/typo3-extensions/fluid-styleguide.git"
+		},
+		{
+			"type": "git",
+			"url": "git@gitlab.werkraum.net:werkraum/vorlagen/module/fluid_styleguide_export.git"
+		},
+		{
+			"type": "vcs",
+			"url": "git@gitlab.werkraum.net:werkraum/vorlagen/module/bootstrap-fluid-components.git"
+		},
+		{
+			"type": "vcs",
+			"url": "git@gitlab.werkraum.net:werkraum/vorlagen/module/vite-for-typo3.git"
+		}
+    ],
+    "name": "werkraum/travelhub",
+    "description": "TYPO3 Project for travelhub",
+    "license": "GPL-2.0+",
+    "require": {
+        "typo3/minimal": "^12",
+		"typo3/cms-adminpanel": "^12.4",
+		"typo3/cms-backend": "^12.4",
+		"typo3/cms-belog": "^12.4",
+		"typo3/cms-beuser": "^12.4",
+		"typo3/cms-core": "^12.4",
+		"typo3/cms-dashboard": "^12.4",
+		"typo3/cms-extbase": "^12.4",
+		"typo3/cms-extensionmanager": "^12.4",
+		"typo3/cms-felogin": "^12.4",
+		"typo3/cms-filelist": "^12.4",
+		"typo3/cms-filemetadata": "^12.4",
+		"typo3/cms-fluid": "^12.4",
+		"typo3/cms-fluid-styled-content": "^12.4",
+		"typo3/cms-form": "^12.4",
+		"typo3/cms-frontend": "^12.4",
+		"typo3/cms-impexp": "^12.4",
+		"typo3/cms-indexed-search": "^12.4",
+		"typo3/cms-info": "^12.4",
+		"typo3/cms-install": "^12.4",
+		"typo3/cms-linkvalidator": "^12.4",
+		"typo3/cms-lowlevel": "^12.4",
+		"typo3/cms-opendocs": "^12.4",
+		"typo3/cms-reactions": "^12.4",
+		"typo3/cms-recycler": "^12.4",
+		"typo3/cms-redirects": "^12.4",
+		"typo3/cms-reports": "^12.4",
+		"typo3/cms-rte-ckeditor": "^12.4",
+		"typo3/cms-scheduler": "^12.4",
+		"typo3/cms-seo": "^12.4",
+		"typo3/cms-setup": "^12.4",
+		"typo3/cms-sys-note": "^12.4",
+		"typo3/cms-t3editor": "^12.4",
+		"typo3/cms-tstemplate": "^12.4",
+		"typo3/cms-viewpage": "^12.4",
+		"typo3/cms-webhooks": "^12.4",
+		"typo3/cms-workspaces": "^12.4",
+
+        "helhum/typo3-console": "^8",
+        "helhum/dotenv-connector": "^3",
+
+        "georgringer/news": "^11",
+        "b13/container": "^2",
+        "networkteam/sentry-client": "^4",
+
+        "werkraum/site-package": "@dev",
+        "sitegeist/fluid-components": "^3 || @dev",
+		"sitegeist/fluid-styleguide": "^2 || @dev",
+		"werkraum/fluid-styleguide-export": "dev-main",
+        "werkraum/bootstrap-fluid-components": "dev-main",
+        "werkraum/vite-for-typo3": "dev-main"
+    },
+    "extra": {
+        "typo3/cms": {
+            "web-dir": "public"
+        },
+        "helhum/typo3-console": {
+            "install-extension-dummy": false
+        }
+    },
+    "require-dev": {
+        "typo3/coding-standards": "^0.5",
+        "phpstan/phpstan": "^1.10",
+        "ssch/typo3-rector": "^1.2"
+    },
+    "config": {
+        "platform": {
+            "php": "8.2"
+        },
+		"allow-plugins": {
+            "typo3/cms-composer-installers": true,
+            "typo3/class-alias-loader": true,
+            "helhum/dotenv-connector": true,
+            "php-http/discovery": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+	"scripts": {
+		"phpstan:analyse": "phpstan analyse --memory-limit=2G --error-format=raw --no-progress",
+		"php-cs-fixer:fix": "php-cs-fixer fix --diff",
+		"php-cs-fixer:fix:dry-run": "@php-cs-fixer:fix --dry-run",
+		"rector:process": "rector --no-progress-bar --memory-limit=2G",
+		"rector:process:dry-run": "@rector:process --dry-run",
+		"fc:generatexsd": "typo3 fluidcomponents:generatexsd ../ --namespace='Werkraum\\SitePackage\\Components'"
+	}
+}

@@ -1,0 +1,45 @@
+
+config {
+  absRefPrefix = auto
+  cache_period = 86400
+  debug = 0
+  disablePrefixComment = 1
+  doctype = html5
+  extTarget =
+  index_enable = 1
+  index_externals = 1
+  index_metatags = 1
+  inlineStyle2TempFile = 1
+  intTarget =
+  linkVars = L
+  metaCharset = utf-8
+  no_cache = 0
+  pageTitleFirst = 1
+  removeDefaultJS = 0
+  sendCacheHeaders = 1
+  uniqueLinkVars = 1
+
+  // Disable image upscaling
+  noScaleUp = 1
+
+  // Compression and concatenation of CSS and JS Files
+  compressCss = 0
+  compressJs = 0
+  concatenateCss = 0
+  concatenateJs = 0
+
+  additionalHeaders {
+    10.header = strict-transport-security:max-age=31536000
+    20.header = X-Frame-Options:SAMEORIGIN
+    30.header = X-Xss-Protection: 1; mode=block
+    40.header = Referrer-Policy:strict-origin
+    50.header = X-Content-Type-Options: nosniff
+    60.header = Permissions-Policy: midi=(), encrypted-media=(), usb=(), magnetometer=(), accelerometer=(), gyroscope=(), microphone=()
+    # erlaubt alle externen Inhalte solange https eingesetzt wird oder inline
+    70.header = Content-Security-Policy: default-src https: 'unsafe-inline' data:
+  }
+}
+
+[applicationContext == 'Development/Ddev']
+  config.additionalHeaders.70.header = Content-Security-Policy: default-src https: 'unsafe-inline' data: ; connect-src wss: https:
+[END]
